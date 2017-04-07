@@ -1,0 +1,45 @@
+<form #form="ngForm" (ngSubmit)="search(form.value)">
+	<p>Please select your search criteria.</p>
+	<div class="form-group text-right">
+		<button type="submit" class="btn btn-default">Apply</button>
+	</div>
+	<div class="form-group">
+		<label>Journalist Name</label>
+		<input type="text" class="form-control" name="personname" ngModel>
+	</div>
+	<div class="form-group">
+		<label>Media Name</label>
+		<input type="text" class="form-control" name="medianame" ngModel>
+	</div>
+	<div class="form-group">
+		<label>Period</label>
+		<input type="text" class="form-control" name="period" ngModel>
+	</div>
+	<div class="form-group">
+		<label>By Media Type</label>
+		<input type="text" class="form-control" name="mediatype" ngModel>
+	</div>
+	<div class="form-group">
+		<label>By Subject</label>
+		<input type="text" class="form-control" name="subject" ngModel>
+	</div>
+	<div class="form-group">
+		<label>Media Group</label>
+		<input type="text" class="form-control" name="mediagroup" ngModel>
+	</div>
+	<div class="form-group">
+		<label>Title</label>
+		<input type="text" class="form-control" name="title" ngModel>
+	</div>
+	<div class="form-group">
+		<label>Region</label>
+		<input type="text" class="form-control" name="region" ngModel>
+	</div>
+	<div class="form-group">
+		<label>Audience</label>
+		<input type="text" class="form-control" name="audience" ngModel>
+	</div>
+	<div class="form-group text-right">
+		<button type="submit" class="btn btn-default">Apply</button>
+	</div>
+</form>

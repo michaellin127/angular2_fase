@@ -1,0 +1,36 @@
+<div class="people-container">
+	<div class="row page-title">
+		<div class="col-sm-12">
+			<h4>People</h4>
+		</div>
+	</div>
+	<div class="people-content">
+		<div class="people-categories">
+			<section>
+				<tabs>
+					<tab tabTitle="By Media Type" tabHref="/people/mediatype" [tabActive]="request.param==='mediatype'">
+						<ul class="faselis-list-container">
+							<li *ngFor="let cat of media_categories; let i=index" class="item" [class.active]="cat.id==request.id" (click)="setCategory(cat.id)" >
+								{{cat.name}}
+							</li>
+						</ul>
+					</tab>
+					<tab tabTitle="By Subject" tabHref="/people/subject" [tabActive]="request.param==='subject'">
+						<ul class="faselis-list-container">
+							<li *ngFor="let cat of subject_categories; let i=index" class="item" [class.active]="cat.id==request.id" (click)="setCategory(cat.id)" >
+								{{cat.name}}
+							</li>
+						</ul>
+					</tab>
+					<tab tabTitle="Advanced Search" tabHref="/people/advanced-search" [tabActive]="request.param==='searchByKeyword'">
+						<advanced-search (onSearch)="search($event)"></advanced-search>
+					</tab>
+				</tabs>
+			</section>
+		</div>
+		<div class="people-details-panel">
+			<!-- <people-list [lists]="Peoples" (changedPage)="changedPage($event)" class="people-list"></people-list> -->
+			<people-list [lists]="peoples" (onNext)="next()" class="people-list"></people-list>
+		</div>
+	</div>
+</div>

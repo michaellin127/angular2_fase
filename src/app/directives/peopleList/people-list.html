@@ -1,0 +1,21 @@
+<div class="people-list-header">
+	<div class="name">Name & Surname</div>
+	<div class="information">
+		<span>Information</span>
+		<span class="records">{{lists?.paging?.total}} records found</span>
+	</div>
+</div>
+<ul scroller class="people-list-container" (scrollEvent)="next()" [bottom]="1000">
+	<li *ngFor="let list of lists?.people; let i=index" class="item">
+		<div class="name">{{list.name+" "+list.surname}}</div>
+		<div class="information">
+			<ul class="media-connections-content">
+				<li *ngFor="let mc of list.mediaConnections; let k=index" class="media-item">
+					<p class="media-name">{{mc.name}}</p>
+					<p class="media-title">{{mc.title}}</p>
+					<p class="media-phone">{{mc.phone}}</p>
+				</li>
+			</ul>
+		</div>
+	</li>
+</ul>
